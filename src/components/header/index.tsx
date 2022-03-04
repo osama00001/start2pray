@@ -60,6 +60,7 @@ export const Header = () => {
     };
     window.addEventListener("scroll", handleScroll);
   });
+
   return (
     <div
       className={cx("fixed top-0 z-10 left-0 w-screen ", {
@@ -81,7 +82,10 @@ export const Header = () => {
             }
           )}
         >
-          <ul className="flex flex-col items-center justify-center lg:flex-row bg-[#1f1e1e] lg:bg-transparent w-screen lg:w-max  h-screen lg:h-max  gap-8 uppercase">
+          <ul
+            className="flex flex-col items-center justify-center lg:flex-row bg-[#1f1e1e] lg:bg-transparent w-screen lg:w-max  h-screen lg:h-max   uppercase"
+            style={{ gap: "2rem" }}
+          >
             {navLinks.map((link, i) => (
               <li
                 key={i}
