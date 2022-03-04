@@ -53,6 +53,7 @@ export const PrayerCards = () => {
             name={prayer.name}
             imgUrl={prayer.img}
             description={prayer.description}
+            bgColor={prayer.color}
           />
         ))}
       </div>
