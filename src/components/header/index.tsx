@@ -62,11 +62,11 @@ export const Header = () => {
   });
   return (
     <div
-      className={cx("fixed top-0 z-10  inset-x-0 ", {
+      className={cx("fixed top-0 z-10 left-0 w-screen ", {
         "bg-primary": changeBg,
       })}
     >
-      <header className="flex h-[80px]  justify-between items-center max-w-[1200px] px-5 mx-auto ">
+      <header className="flex h-[80px]  justify-between  items-center max-w-[1200px] px-5 mx-auto">
         <span className="text-2xl md:text-3xl uppercase font-semibold text-secondary select-none cursor-pointer">
           start2pray.com
         </span>
