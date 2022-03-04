@@ -85,6 +85,7 @@ export const Header = () => {
             {navLinks.map((link, i) => (
               <li
                 key={i}
+                onClick={() => setIsOpen(false)}
                 className={cx(
                   "text-white/90 text-xl hover:text-white/80 active:text-white/90",
                   {
