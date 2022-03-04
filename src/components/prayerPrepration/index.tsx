@@ -62,7 +62,7 @@ export const PrayerPreparation = () => {
       </h2>
       <div className="flex px-10 flex-wrap w-full items-center  gap-8">
         {prayerPreparation.map((prayer, i) => (
-          <Modal title={prayer.title} key={i} content={prayer.content} />
+          <Modal title={prayer.title} key={i} preparation={prayer.content} />
         ))}
       </div>
     </section>

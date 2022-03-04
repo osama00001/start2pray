@@ -5,7 +5,10 @@ export const Feedback = () => {
     event.preventDefault();
   };
   return (
-    <section id="contact" className="flex flex-col gap-5 justify-center items-center min-h-screen w-[min(500px,100%-30px)] mx-auto">
+    <section
+      id="contact"
+      className="flex flex-col gap-5 justify-center items-center min-h-screen w-[min(500px,100%-30px)] mx-auto"
+    >
       <h2 className="uppercase text-center text-4xl md:text-6xl tracking-wide text-gradient bg-gradient-to-r from-[#aed6f1] to-[#5499c7] font-bold ">
         Feedback
       </h2>

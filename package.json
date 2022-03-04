@@ -15,7 +15,9 @@
     "classnames": "^2.3.1",
     "next": "12.1.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-audio-player": "^0.17.0",
+    "react-dom": "17.0.2",
+    "webvtt-player": "^0.0.16"
   },
   "devDependencies": {
     "@types/node": "17.0.21",
