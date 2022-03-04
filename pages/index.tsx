@@ -18,7 +18,7 @@ const Home: NextPage = () => {
             <div>
               <Image
                 layout="fill"
-                className="object-center object-cover pointer-events-none"
+                className="object-top  object-cover pointer-events-none"
                 src="/img/newhero-bg.jpg"
                 alt=""
               />
