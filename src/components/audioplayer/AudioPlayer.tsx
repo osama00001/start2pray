@@ -140,6 +140,7 @@ const PrayerGuide = ({ imageIndex }: { imageIndex: number }) => {
   return (
     <div className="relative w-[200px] h-[200px]  mx-auto">
       <Image
+        priority
         width="100%"
         height="100%"
         quality={100}

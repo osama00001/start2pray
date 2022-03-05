@@ -17,6 +17,7 @@ const Home: NextPage = () => {
           <div className="w-full  relative h-screen  bg-cover bg-bottom md:bg-top bg-no-repeat">
             <div>
               <Image
+                priority
                 layout="fill"
                 className="object-top  object-cover pointer-events-none"
                 src="/img/newhero-bg.jpg"
