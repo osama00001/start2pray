@@ -69,7 +69,7 @@ const prayerRecords = {
   },
 };
 
-const Prayer = () => {
+export const AudioPlayerModal = ({ title }: { title: string }) => {
   const [rakaNumber, setrakaNumber] = useState(0);
 
   const totalRaka = prayerRecords["dhuhr"]["faradh"].totalRaka;
@@ -93,7 +93,7 @@ const Prayer = () => {
 
   return (
     <div>
-      <PlayerModal prayerName={raka}>
+      <PlayerModal prayerName={raka} title={title}>
         <AudioPlayer
           recording={recording}
           vttFile={vttFile}
@@ -106,5 +106,3 @@ const Prayer = () => {
     </div>
   );
 };
-
-export default Prayer;

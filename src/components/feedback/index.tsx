@@ -34,7 +34,8 @@ export const Feedback = () => {
           />
           <textarea
             placeholder="Message"
-            className="border-[1px] hover:border-gray-400 px-3 py-3 rounded-lg"
+            rows={5}
+            className="border-[1px]  hover:border-gray-400 px-3 py-3 rounded-lg"
           />
           <button className="bg-gradient-to-r from-[#aed6f1] to-[#5499c7]  hover:to-[#5499c7]/80 self-center py-2 w-[min(300px,100%)] rounded-lg text-white font-bold">
             Submit

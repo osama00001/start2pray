@@ -12,12 +12,14 @@
     "@headlessui/react": "^1.5.0",
     "@radix-ui/react-dialog": "^0.1.7",
     "@radix-ui/react-icons": "^1.1.0",
+    "@radix-ui/react-slider": "^0.1.4",
+    "@vime/core": "^5.3.1",
+    "@vime/react": "^5.3.1",
     "classnames": "^2.3.1",
     "next": "12.1.0",
     "react": "17.0.2",
-    "react-audio-player": "^0.17.0",
     "react-dom": "17.0.2",
-    "webvtt-player": "^0.0.16"
+    "react-player": "^2.9.0"
   },
   "devDependencies": {
     "@types/node": "17.0.21",
