@@ -34,13 +34,13 @@ export const AudioPlayer = ({
   const [completeDuration, setCompleteDuration] = useState("");
   const [imageIndex, setImageIndex] = useState(1);
 
-  const playerRef = useRef(null);
+  const playerRef = useRef<ReactPlayer>(null!);
 
   const handlePlaying = () => setIsPlaying((state) => !state);
 
   const handleSlider = (value: any) => {
     setPlayed(value);
-    playerRef.current!.seekTo(parseFloat(value));
+    playerRef.current.seekTo(parseFloat(value));
   };
 
   const handleProgress = (value: any) => {
