@@ -28,7 +28,7 @@ export const PrayerCard = ({
       style={{ background: bgColor }}
     >
       <div className="relative w-40 h-40">
-        <Image src={imgUrl} alt="fajr" layout="fill" objectFit="contain" />
+        <Image src={imgUrl} alt="" layout="fill" objectFit="contain" />
       </div>
       <Modal audioModalData={audioModalData} title={name} rakats={rakats} />
       <p className="text-white/90 text-center px-7 font-semibold">
