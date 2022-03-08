@@ -131,6 +131,7 @@ export const AudioPlayer = ({
         ref={playerRef}
         height={100}
         width="100%"
+        playsinline={true}
         controls={false}
         volume={volume}
         key={rakaNumber}
@@ -141,7 +142,7 @@ export const AudioPlayer = ({
         config={{
           file: {
             attributes: {
-              crossOrigin: "true",
+              crossOrigin: "anonymous",
             },
             tracks: [
               {

@@ -60,7 +60,7 @@ export const PrayerPreparation = () => {
       <h2 className="uppercase mb-20 text-center text-4xl md:text-6xl tracking-wide text-gradient bg-gradient-to-r from-[#aed6f1] to-[#5499c7] font-bold ">
         Prepration of prayers
       </h2>
-      <div className="flex px-10 flex-wrap w-full items-center  gap-8">
+      <div className="flex px-10 flex-wrap w-full items-center children:my-5 sm:children:mx-3">
         {prayerPreparation.map((prayer, i) => (
           <Modal
             isVedio={prayer.title === "wudhu"}

@@ -64,7 +64,7 @@ const WuduInstructionVedio = ({ url }: { url: string }) => {
 const PrayerDetailsTrigger = ({ title }: { title: string }) => {
   return (
     <DialogPrimitive.Trigger asChild>
-      <button className="shadow-lg w-full text-center transition-colors py-5 hover:bg-[#42ABAE] text-white/90 font-semibold uppercase text-sm">
+      <button className="shadow-lg w-[250px] mx-auto border-2 border-[#42ABAE] text-center transition-colors py-5 hover:bg-[#42ABAE] text-white/90 font-semibold uppercase text-sm">
         {title}
       </button>
     </DialogPrimitive.Trigger>

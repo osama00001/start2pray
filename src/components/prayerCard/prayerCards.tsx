@@ -12,7 +12,7 @@ const prayerDetails = [
   },
   {
     name: "midday prayer(dhuhr)",
-    key: "fajr",
+    key: "dhuhr",
     img: "/img/cards/dhuhur.png",
     description:
       "When the sun has just passed the meridian, till the beginning of Asr",
@@ -25,7 +25,7 @@ const prayerDetails = [
   },
   {
     name: "late afternoon prayer(asr)",
-    key: "fajr",
+    key: "asr",
     img: "/img/cards/asr.png",
     description: "when the sun is halfway down from noon to sunset",
     color: "#3a4a58",
@@ -55,22 +55,23 @@ const prayerDetails = [
 
 export const PrayerCards = () => {
   return (
-    <section className="flex items-center  my-20 flex-col gap-8">
-      <h2 className="uppercase mb-20 text-6xl tracking-wide text-[#aed6f1] font-bold ">
+    <section className="grid grid-flow-row items-center my-20">
+      <h2 className="uppercase mb-20 text-6xl mx-auto tracking-wide text-[#aed6f1] font-bold ">
         choose
         <div className="text-[#5499c7] ml-2">prayer</div>
       </h2>
-      <div className="flex  flex-wrap justify-center gap-8 mx-5">
+      <div className="flex  flex-wrap justify-center  mx-5">
         {prayerDetails.map((prayer, i) => (
-          <PrayerCard
-            key={prayer.key}
-            name={prayer.name}
-            imgUrl={prayer.img}
-            description={prayer.description}
-            bgColor={prayer.color}
-            rakats={prayer.rakats}
-            audioModalData={prayerRecords[i]}
-          />
+          <div key={prayer.key} className="w-[min(300px,100%)] m-3">
+            <PrayerCard
+              name={prayer.name}
+              imgUrl={prayer.img}
+              description={prayer.description}
+              bgColor={prayer.color}
+              rakats={prayer.rakats}
+              audioModalData={prayerRecords[i]}
+            />
+          </div>
         ))}
       </div>
     </section>
