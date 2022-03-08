@@ -1,6 +1,6 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 module.exports = {
-  mode : "jit",
+  mode: "jit",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./src/components/**/*.{js,ts,jsx,tsx}",
@@ -24,5 +24,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/aspect-ratio")],
 };
