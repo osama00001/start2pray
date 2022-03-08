@@ -1,35 +1,37 @@
 import { Transition } from "@headlessui/react";
-import Link from "next/link";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { Cross1Icon } from "@radix-ui/react-icons";
 import cx from "classnames";
-import React, { Dispatch, Fragment, useState } from "react";
+import React, { Fragment, useState } from "react";
 import { AudioPlayerModal } from "@components/audioplayer";
+import { IPrayerData } from "@src/data/type";
+import ReactPlayer from "react-player";
 
 interface Props {
   title: string;
   preparation?: string[];
+  audioModalData?: IPrayerData[];
+  isVedio?: boolean;
   rakats?: {
     rakat: string;
-    url: string;
   }[];
 }
 
 const PrayerDetails = ({
-  rakats,
-  setIsOpen,
+  audioModalData,
 }: {
-  rakats: { rakat: string; url: string }[];
-  setIsOpen: Dispatch<React.SetStateAction<boolean>>;
+  audioModalData: IPrayerData[];
 }) => {
   return (
     <DialogPrimitive.Description className="space-y-3 mx-auto flex justify-center font-normal text-gray-700">
       <div className="flex flex-col justify-center w-[min(300px,100%)]  gap-4">
-        {rakats.map(({ rakat }, i) => (
-          <>
-            <AudioPlayerModal key={i} title={rakat} />
-          </>
-        ))}
+        {audioModalData.map((value, i) => {
+          return (
+            <>
+              <AudioPlayerModal key={i} prayerRecord={value} />
+            </>
+          );
+        })}
       </div>
     </DialogPrimitive.Description>
   );
@@ -47,6 +49,14 @@ const PrayerPreparationDetails = ({
           {data}
         </p>
       ))}
+    </DialogPrimitive.Description>
+  );
+};
+
+const WuduInstructionVedio = ({ url }: { url: string }) => {
+  return (
+    <DialogPrimitive.Description className="space-y-3 rounded-xl mt-6  overflow-hidden aspect-w-16 aspect-h-9  font-normal text-gray-700">
+      <ReactPlayer url={url} height="100%" width="100%" controls={false} />
     </DialogPrimitive.Description>
   );
 };
@@ -73,7 +83,13 @@ const PrayerPreparationDetailsTrigger = ({ title }: { title: string }) => {
   );
 };
 
-export const Modal = ({ title, preparation, rakats }: Props) => {
+export const Modal = ({
+  title,
+  preparation,
+  rakats,
+  audioModalData,
+  isVedio,
+}: Props) => {
   let [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -109,21 +125,25 @@ export const Modal = ({ title, preparation, rakats }: Props) => {
               forceMount
               className={cx(
                 "fixed z-50",
-                "w-[95vw] max-w-md rounded-3xl p-4 md:w-full",
+                "w-[95vw]  rounded-3xl p-4  mx-auto",
+                isVedio ? "max-w-screen-sm" : "max-w-md",
                 "top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]",
                 "bg-gradient-to-tr from-[#E3FDF5] to-[#FFE6FA]",
                 "focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75"
               )}
             >
-              {preparation && (
-                <PrayerPreparationDetails preparation={preparation} />
-              )}
-              {rakats && (
+              {preparation &&
+                (isVedio ? (
+                  <WuduInstructionVedio url="https://www.youtube.com/watch?v=3wSge6FrEFg" />
+                ) : (
+                  <PrayerPreparationDetails preparation={preparation} />
+                ))}
+              {audioModalData && (
                 <>
                   <DialogPrimitive.Title className="text-2xl font-semibold text-gray-600 mb-2">
                     Select
                   </DialogPrimitive.Title>{" "}
-                  <PrayerDetails rakats={rakats} setIsOpen={setIsOpen} />
+                  <PrayerDetails audioModalData={audioModalData} />
                 </>
               )}
               <DialogPrimitive.Close
