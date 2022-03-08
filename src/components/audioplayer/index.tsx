@@ -1,2 +1,2 @@
 export  * from './AudioPlayer'
-export * from './AudioModal'
+export * from './playerCard'

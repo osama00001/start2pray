@@ -7,14 +7,15 @@ import {
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import ReactPlayer from "react-player";
 import styles from "./audioplayer.module.css";
-import Slider from "./slider";
-import { PlayerVolume } from "./volume";
 import Image from "next/image";
+import Slider from "@components/slider";
+import { PlayerVolume } from "@components/volumeSlider";
 
 interface IAudioPlayer {
   recording: string;
   vttFile: string;
   rakaNumber: number;
+  totalRaka: number;
   movementTime: number[][];
   handlePrevRaka: () => void;
   handleNextRaka: () => void;
@@ -22,6 +23,7 @@ interface IAudioPlayer {
 export const AudioPlayer = ({
   vttFile,
   recording,
+  totalRaka,
   handleNextRaka,
   handlePrevRaka,
   movementTime,
@@ -59,33 +61,66 @@ export const AudioPlayer = ({
     return `${m}:${s}`;
   }
 
-  // change image at different intervals of the audio movementTime contains data about
+  // Change image at different intervals of the audio, movementTime contains data about
   // when to change the image
 
   useEffect(() => {
     const seconds = Math.round(playedSeconds);
     if (seconds && movementTime) {
-      if (seconds > movementTime[0][0] && seconds < movementTime[0][1]) {
+      if (seconds >= movementTime[0][0] && seconds < movementTime[0][1]) {
+        console.log("first condition", seconds);
         setImageIndex(1);
-      } else if (seconds > movementTime[1][0] && seconds < movementTime[1][1]) {
+      } else if (
+        seconds >= movementTime[1][0] &&
+        seconds < movementTime[1][1]
+      ) {
+        console.log("second condition", seconds);
         setImageIndex(2);
-      } else if (seconds > movementTime[2][0] && seconds < movementTime[2][1]) {
+      } else if (
+        seconds >= movementTime[2][0] &&
+        seconds < movementTime[2][1]
+      ) {
+        console.log("third condition", seconds);
         setImageIndex(3);
-      } else if (seconds > movementTime[3][0] && seconds < movementTime[3][1]) {
+      } else if (
+        seconds >= movementTime[3][0] &&
+        seconds < movementTime[3][1]
+      ) {
+        console.log("fourth condition", seconds);
         setImageIndex(4);
-      } else if (seconds > movementTime[4][0] && seconds < movementTime[4][1]) {
+      } else if (
+        seconds >= movementTime[4][0] &&
+        seconds < movementTime[4][1]
+      ) {
+        console.log("fifth condition", seconds);
         setImageIndex(5);
-      } else if (seconds > movementTime[5][0] && seconds < movementTime[5][1]) {
+      } else if (
+        seconds >= movementTime[5][0] &&
+        seconds < movementTime[5][1]
+      ) {
+        console.log("sixth condition", seconds);
         setImageIndex(4);
       } else if (
         movementTime[6] &&
-        seconds > movementTime[6][0] &&
+        seconds >= movementTime[6][0] &&
         seconds < movementTime[6][1]
       ) {
-        setImageIndex(rakaNumber === 1 || rakaNumber === 3 ? 1 : 5);
+        console.log("seventh condition", seconds);
+        if (totalRaka === 3) {
+          setImageIndex(rakaNumber === 1 ? 1 : 5); // for prayer with 3 rakaa
+        } else {
+          setImageIndex(rakaNumber === 1 || rakaNumber === 3 ? 1 : 5); // if rakaa Number is 2 or 4th then person should be in sitting position otherwise in standing position
+        }
+      } else if (
+        movementTime[7] &&
+        seconds >= movementTime[7][0] &&
+        seconds < movementTime[7][1]
+      ) {
+        console.log("eighth condition", seconds);
+        setImageIndex(1); // make the person stand in the 2 rakaa of 4 rakaa prayer after Tashahhud
       }
     }
-  }, [playedSeconds, movementTime, rakaNumber]);
+  }, [playedSeconds, movementTime, rakaNumber, totalRaka]);
 
   return (
     <div className="w-[min(400px,100%)]">
@@ -98,17 +133,21 @@ export const AudioPlayer = ({
         width="100%"
         controls={false}
         volume={volume}
+        key={rakaNumber}
         playing={isPlaying}
         onProgress={handleProgress}
         progressInterval={1000}
         onDuration={(duration) => setCompleteDuration(secondsToTime(duration))}
         config={{
           file: {
+            attributes: {
+              crossOrigin: "true",
+            },
             tracks: [
               {
-                kind: "captions",
+                kind: "subtitles",
                 src: vttFile,
-                srcLang: "ara",
+                srcLang: "en",
                 default: true,
                 label: "transcript",
               },
