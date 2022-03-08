@@ -195,7 +195,10 @@ const PrayerGuide = ({ imageIndex }: { imageIndex: number }) => {
 
 const PrevButton = ({ handlePrevRaka }: { handlePrevRaka: () => void }) => {
   return (
-    <button className="rounded-full p-1 " onClick={handlePrevRaka}>
+    <button className="rounded-full p-1 relative" onClick={handlePrevRaka}>
+      <span className="text-sm absolute w-max -top-1 -left-4 text-gray-800">
+        Prev Rakaa
+      </span>
       <TrackPreviousIcon
         width={35}
         height={35}
@@ -208,7 +211,10 @@ const PrevButton = ({ handlePrevRaka }: { handlePrevRaka: () => void }) => {
 
 const NextButton = ({ handleNextRaka }: { handleNextRaka: () => void }) => {
   return (
-    <button className="rounded-full p-1" onClick={handleNextRaka}>
+    <button className="rounded-full p-1 relative" onClick={handleNextRaka}>
+      <span className="text-sm absolute w-max -top-1 -right-4 text-gray-800">
+        Next Rakaa
+      </span>
       <TrackNextIcon
         width={35}
         height={35}
