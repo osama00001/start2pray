@@ -68,44 +68,37 @@ export const AudioPlayer = ({
     const seconds = Math.round(playedSeconds);
     if (seconds && movementTime) {
       if (seconds >= movementTime[0][0] && seconds < movementTime[0][1]) {
-        console.log("first condition", seconds);
         setImageIndex(1);
       } else if (
         seconds >= movementTime[1][0] &&
         seconds < movementTime[1][1]
       ) {
-        console.log("second condition", seconds);
         setImageIndex(2);
       } else if (
         seconds >= movementTime[2][0] &&
         seconds < movementTime[2][1]
       ) {
-        console.log("third condition", seconds);
         setImageIndex(3);
       } else if (
         seconds >= movementTime[3][0] &&
         seconds < movementTime[3][1]
       ) {
-        console.log("fourth condition", seconds);
         setImageIndex(4);
       } else if (
         seconds >= movementTime[4][0] &&
         seconds < movementTime[4][1]
       ) {
-        console.log("fifth condition", seconds);
         setImageIndex(5);
       } else if (
         seconds >= movementTime[5][0] &&
         seconds < movementTime[5][1]
       ) {
-        console.log("sixth condition", seconds);
         setImageIndex(4);
       } else if (
         movementTime[6] &&
         seconds >= movementTime[6][0] &&
         seconds < movementTime[6][1]
       ) {
-        console.log("seventh condition", seconds);
         if (totalRaka === 3) {
           setImageIndex(rakaNumber === 1 ? 1 : 5); // for prayer with 3 rakaa
         } else {
@@ -116,7 +109,6 @@ export const AudioPlayer = ({
         seconds >= movementTime[7][0] &&
         seconds < movementTime[7][1]
       ) {
-        console.log("eighth condition", seconds);
         setImageIndex(1); // make the person stand in the 2 rakaa of 4 rakaa prayer after Tashahhud
       }
     }

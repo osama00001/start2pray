@@ -10,7 +10,7 @@ export const HeroSection = () => {
         <div className="text-[#0D9BA3]">-made in OMAN-</div>
       </h1>
       <div className="ml-3 outline cursor-pointer select-none uppercase md:text-2xl outline-offset-[10px] w-max outline-white/90 text-white/90 hover:outline-white/70 active:outline-white/80 outline-2 py-1 px-10">
-        <a href="#prayers_preparation">let&apos;s pray</a>
+        <a href="#prayerCards">let&apos;s pray</a>
       </div>
     </section>
   );
