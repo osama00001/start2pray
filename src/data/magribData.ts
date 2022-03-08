@@ -29,23 +29,9 @@ const secondRakaa = {
   ],
 };
 
-const thirdRakaa = {
-  recording: "/audio/maghreb/magrib-rakaa-3.mp3",
-  vttFile: "/audio/maghreb/magrib-rakaa-3.mp3",
-  movementTime: [
-    [0, 40],
-    [41, 52],
-    [53, 59],
-    [60, 70],
-    [71, 73],
-    [74, 82],
-    [83, 86],
-  ],
-};
-
 const fourthRakaa = {
   recording: "/audio/maghreb/magrib-rakaa-3.mp3",
-  vttFile: "/audio/maghreb/magrib-rakaa-3.mp3",
+  vttFile: "/audio/maghreb/magrib-rakaa-3-vtt",
   movementTime: [
     [0, 40], // standing
     [41, 53], // bowing
