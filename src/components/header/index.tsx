@@ -83,16 +83,18 @@ export const Header = () => {
           )}
         >
           <div className="bg-[#1f1e1e] grid place-content-center lg:bg-transparent w-screen lg:w-max  h-screen lg:h-max uppercase">
-            <ul className="grid grid-flow-row md:grid-flow-col gap-y-8 gap-x-5 items-center justify-center  ">
+            <ul className="grid grid-flow-row md:grid-flow-col gap-y-8 gap-x-5 items-center justify-center">
               {navLinks.map((link, i) => (
                 <li
                   key={i}
                   onClick={() => setIsOpen(false)}
                   className={cx(
-                    "text-white/90   md:w-auto text-center hover:text-white/80 active:text-white/90 outline md:outline-none outline-offset-[6px]  outline-white/90 hover:outline-white/80 active:outline-white/90 outline-2 rounded-sm text-lg transition-all",
+                    "text-white/90  md:w-auto text-center hover:text-white/80 active:text-white/90 outline md:outline-none outline-offset-[6px]  outline-white/90 hover:outline-white/80 active:outline-white/90 outline-2 rounded-sm text-lg transition-all"
                   )}
                 >
-                  <a href={link.url} className="w-[min(300px,100%)] h-full ">{link.label}</a>
+                  <a href={link.url} className="w-[min(300px,100%)]  h-full">
+                    {link.label}
+                  </a>
                 </li>
               ))}
             </ul>
