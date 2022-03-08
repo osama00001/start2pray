@@ -102,20 +102,6 @@ export const dhuhurPrayerData: IPrayerData[] = [
       },
     ],
   },
-  {
-    name: "sunnah",
-    totalRaka: 2,
-    data: [
-      {
-        raka: "Dhuhr Sunnah 1",
-        ...firstRakaa,
-      },
-      {
-        raka: "Dhuhr Sunnah 2",
-        ...fourthRakaa,
-      },
-    ],
-  },
 ];
 
 // faradh: {
