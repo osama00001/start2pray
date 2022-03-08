@@ -1,3 +1,4 @@
+import { prayerRecords } from "@src/data/prayerRecords";
 import { PrayerCard } from "./prayerCard";
 
 const prayerDetails = [
@@ -7,10 +8,7 @@ const prayerDetails = [
     img: "/img/cards/fajr.png",
     description: "From the break of dawn till the beginning of sunrise",
     color: "#45494f",
-    rakats: [
-      { rakat: "2-Faradh", url: "#" },
-      { rakat: "2-Sunnah", url: "#" },
-    ],
+    rakats: [{ rakat: "2-Faradh" }, { rakat: "2-Sunnah" }],
   },
   {
     name: "midday prayer(dhuhr)",
@@ -20,9 +18,9 @@ const prayerDetails = [
       "When the sun has just passed the meridian, till the beginning of Asr",
     color: "#34444e",
     rakats: [
-      { rakat: "4-Faradh", url: "#" },
-      { rakat: "4-Sunnah", url: "#" },
-      { rakat: "2-Sunnah", url: "#" },
+      { rakat: "4-Faradh" },
+      { rakat: "4-Sunnah" },
+      { rakat: "2-Sunnah" },
     ],
   },
   {
@@ -31,7 +29,7 @@ const prayerDetails = [
     img: "/img/cards/asr.png",
     description: "when the sun is halfway down from noon to sunset",
     color: "#3a4a58",
-    rakats: [{ rakat: "4-Faradh", url: "#" }],
+    rakats: [{ rakat: "4-Faradh" }],
   },
   {
     name: "evening prayer(maghrib)",
@@ -39,21 +37,18 @@ const prayerDetails = [
     img: "/img/cards/maghreb.png",
     description: "Just after sunset till the disappearance of the twilight",
     color: "#454853",
-    rakats: [
-      { rakat: "3-Faradh", url: "#" },
-      { rakat: "2-Sunnah", url: "#" },
-    ],
+    rakats: [{ rakat: "3-Faradh" }, { rakat: "2-Sunnah" }],
   },
   {
-    name: "night prayer(maghrib)",
+    name: "night prayer(Isha)",
     key: "isha",
     img: "/img/cards/ishaa.png",
     description: "When the twilight has just disappeared till mid night",
     color: "#2e404e",
     rakats: [
-      { rakat: "4-Faradh", url: "#" },
-      { rakat: "2-Sunnah", url: "#" },
-      { rakat: "3-Witar", url: "#" },
+      { rakat: "4-Faradh" },
+      { rakat: "2-Sunnah" },
+      { rakat: "3-Witar" },
     ],
   },
 ];
@@ -66,7 +61,7 @@ export const PrayerCards = () => {
         <div className="text-[#5499c7] ml-2">prayer</div>
       </h2>
       <div className="flex  flex-wrap justify-center gap-8 mx-5">
-        {prayerDetails.map((prayer) => (
+        {prayerDetails.map((prayer, i) => (
           <PrayerCard
             key={prayer.key}
             name={prayer.name}
@@ -74,6 +69,7 @@ export const PrayerCards = () => {
             description={prayer.description}
             bgColor={prayer.color}
             rakats={prayer.rakats}
+            audioModalData={prayerRecords[i]}
           />
         ))}
       </div>

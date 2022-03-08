@@ -1,15 +1,16 @@
 import React from "react";
 import Image from "next/image";
 import { Modal } from "@components/modal";
+import { IPrayerData } from "@src/data/type";
 
 interface IPrayerCard {
   imgUrl: string;
   name: string;
   description: string;
   bgColor: string;
+  audioModalData: IPrayerData[];
   rakats: {
     rakat: string;
-    url: string;
   }[];
 }
 
@@ -19,6 +20,7 @@ export const PrayerCard = ({
   description,
   bgColor,
   rakats,
+  audioModalData,
 }: IPrayerCard) => {
   return (
     <section
@@ -28,7 +30,7 @@ export const PrayerCard = ({
       <div className="relative w-40 h-40">
         <Image src={imgUrl} alt="fajr" layout="fill" objectFit="contain" />
       </div>
-      <Modal title={name} rakats={rakats} />
+      <Modal audioModalData={audioModalData} title={name} rakats={rakats} />
       <p className="text-white/90 text-center px-7 font-semibold">
         {description}
       </p>
