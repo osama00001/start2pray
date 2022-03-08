@@ -62,7 +62,7 @@ const WuduInstructionVedio = ({ url }: { url: string }) => {
   );
 };
 
-const IqamaAudio = ({ audioUrl }: { audioUrl: string }) => {
+const IqamaAudio = () => {
   return (
     <DialogPrimitive.Description className="rounded-xl  overflow-hidden  font-normal text-gray-700">
       <h2 className="text-4xl font-bold text-center relative top-5">Iqamah</h2>
@@ -72,6 +72,11 @@ const IqamaAudio = ({ audioUrl }: { audioUrl: string }) => {
         height="150px"
         controls
         pip={false}
+        config={{
+          file: {
+            forceAudio: true,
+          },
+        }}
       />
     </DialogPrimitive.Description>
   );
@@ -153,7 +158,7 @@ export const Modal = ({
                 (isVedio ? (
                   <WuduInstructionVedio url="https://www.youtube.com/watch?v=3wSge6FrEFg" />
                 ) : isAudio ? (
-                  <IqamaAudio audioUrl="/audio/iqama.mp4" />
+                  <IqamaAudio />
                 ) : (
                   <PrayerPreparationDetails preparation={preparation} />
                 ))}
