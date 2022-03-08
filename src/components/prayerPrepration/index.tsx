@@ -64,6 +64,7 @@ export const PrayerPreparation = () => {
         {prayerPreparation.map((prayer, i) => (
           <Modal
             isVedio={prayer.title === "wudhu"}
+            isAudio={prayer.title === 'iqamah'}
             title={prayer.title}
             key={i}
             preparation={prayer.content}

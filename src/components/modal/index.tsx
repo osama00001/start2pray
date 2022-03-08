@@ -12,6 +12,7 @@ interface Props {
   preparation?: string[];
   audioModalData?: IPrayerData[];
   isVedio?: boolean;
+  isAudio?: boolean;
   rakats?: {
     rakat: string;
   }[];
@@ -61,6 +62,21 @@ const WuduInstructionVedio = ({ url }: { url: string }) => {
   );
 };
 
+const IqamaAudio = ({ audioUrl }: { audioUrl: string }) => {
+  return (
+    <DialogPrimitive.Description className="rounded-xl  overflow-hidden  font-normal text-gray-700">
+      <h2 className="text-4xl font-bold text-center relative top-5">Iqamah</h2>
+      <ReactPlayer
+        url="/audio/iqama.mp4"
+        width="100%"
+        height="150px"
+        controls
+        pip={false}
+      />
+    </DialogPrimitive.Description>
+  );
+};
+
 const PrayerDetailsTrigger = ({ title }: { title: string }) => {
   return (
     <DialogPrimitive.Trigger asChild>
@@ -89,6 +105,7 @@ export const Modal = ({
   rakats,
   audioModalData,
   isVedio,
+  isAudio,
 }: Props) => {
   let [isOpen, setIsOpen] = useState(false);
 
@@ -135,6 +152,8 @@ export const Modal = ({
               {preparation &&
                 (isVedio ? (
                   <WuduInstructionVedio url="https://www.youtube.com/watch?v=3wSge6FrEFg" />
+                ) : isAudio ? (
+                  <IqamaAudio audioUrl="/audio/iqama.mp4" />
                 ) : (
                   <PrayerPreparationDetails preparation={preparation} />
                 ))}
