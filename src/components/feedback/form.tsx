@@ -10,7 +10,7 @@ export const FeedbackForm = () => {
 
     emailjs
       .sendForm(
-        "service_cgmwpii",
+        "service_cgmwpii", // service_id template_id and User_ID in here from emailjs
         "template_zveek6a",
         form.current,
         "Lg22aS6akO7zZxU9m"

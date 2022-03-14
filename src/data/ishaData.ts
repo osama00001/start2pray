@@ -81,19 +81,11 @@ export const ishaPrayerData: IPrayerData[] = [
   },
   {
     name: "sunnah",
-    totalRaka: 4,
+    totalRaka: 2,
     data: [
       {
         raka: "Isha Sunnah 1",
         ...firstRakaa,
-      },
-      {
-        raka: "Isha Sunnah 2",
-        ...secondRakaa,
-      },
-      {
-        raka: "Isha Sunnah 3",
-        ...thirdRakaa,
       },
       {
         raka: "Isha Sunnah 4",

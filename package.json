@@ -2,10 +2,11 @@
   "name": "start2pray",
   "version": "0.1.0",
   "private": true,
+  "homepage": "start2pray.com",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "NODE_ENV=production node server.js",
     "lint": "next lint"
   },
   "dependencies": {

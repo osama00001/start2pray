@@ -82,19 +82,11 @@ export const dhuhurPrayerData: IPrayerData[] = [
   },
   {
     name: "sunnah",
-    totalRaka: 4,
+    totalRaka: 2,
     data: [
       {
         raka: "Dhuhr Sunnah 1",
         ...firstRakaa,
-      },
-      {
-        raka: "Dhuhr Sunnah 2",
-        ...secondRakaa,
-      },
-      {
-        raka: "Dhuhr Sunnah 3",
-        ...thirdRakaa,
       },
       {
         raka: "Dhuhr Sunnah 4",
