@@ -5,7 +5,7 @@ export const HeroSection = () => {
       className="max-w-[1000px]  ml-5 sm:ml-10 pt-52 lg:mx-auto space-y-10"
     >
       <h1 className="space-y-2  text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white font-bold">
-        <div>Ibadi Online</div>
+        <div>Come to prayer come to success.</div>
         <div>Prayer platform</div>
         <div className="text-[#0D9BA3]">-made in OMAN-</div>
       </h1>

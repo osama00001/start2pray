@@ -42,7 +42,7 @@ const PrayerPreparationDetails = ({
   preparation,
 }: {
   preparation: string[];
-}) => {
+}) => { 
   return (
     <DialogPrimitive.Description className="mt-4 space-y-3  font-normal text-gray-700">
       {preparation.map((data, i) => (
@@ -62,14 +62,27 @@ const WuduInstructionVedio = ({ url }: { url: string }) => {
   );
 };
 
-const IqamaAudio = () => {
+const IqamaAudio = ({
+  preparation,
+}: {
+  preparation: string[];
+}) => {
+
   return (
     <DialogPrimitive.Description className="rounded-xl  overflow-hidden  font-normal text-gray-700">
       <h2 className="text-4xl font-bold text-center relative top-5">Iqamah</h2>
+      <br></br>
+      <p className="text-1xl  relative top-5" >
+      In Islam men are ordered to pray the obligatory prayers in congregation (i.e, to pray with a group of men). However, if a man prays alone then he should recite the iqamah before starting to pray.
+      <br></br>
+      <br></br>
+      Click on the audio below to listen to the iqamah.</p>
       <ReactPlayer
+
         url="/audio/iqama.mp4"
         width="100%"
         height="150px"
+        prepration={preparation}
         controls
         pip={false}
         config={{
@@ -158,7 +171,7 @@ export const Modal = ({
                 (isVedio ? (
                   <WuduInstructionVedio url="https://www.youtube.com/watch?v=3wSge6FrEFg" />
                 ) : isAudio ? (
-                  <IqamaAudio />
+                  <IqamaAudio preparation={preparation} />
                 ) : (
                   <PrayerPreparationDetails preparation={preparation} />
                 ))}
