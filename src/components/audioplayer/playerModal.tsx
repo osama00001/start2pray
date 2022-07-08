@@ -14,13 +14,13 @@ const AudioPlayerTrigger = ({ title }: { title: string }) => {
   return (
     <DialogPrimitive.Trigger asChild>
       <button className="bg-gradient-to-r from-[#aed6f1] to-[#5499c7]  hover:to-[#5499c7]/80 self-center py-2 w-[min(300px,100%)] rounded-lg text-white font-bold text-center">
-        {title}
+        {title} 
       </button>
     </DialogPrimitive.Trigger>
   );
 };
 
-export const PlayerModal = ({ children, prayerName, title }: Props) => {
+export const PlayerModal = ({ children, prayerName, title }: any) => {
   let [isOpen, setIsOpen] = useState(false);
 
   return (

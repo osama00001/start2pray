@@ -8,3 +8,5 @@ export interface IPrayerData {
     raka: string;
   }[];
 }
+
+

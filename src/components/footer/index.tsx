@@ -6,7 +6,7 @@ export const Footer = () => {
       <div className="w-[min(500px,100%-30px)] mx-auto flex flex-col items-center justify-between  h-full">
         <div className="mt-10">
           <p className="text-2xl text-center md:text-3xl uppercase font-semibold text-secondary select-none cursor-pointer">
-            Start2xpray.com
+            Start2pray.com
           </p>
           <p className="text-gray-200 text-center text-lg">
             Complete Online Salah Solution

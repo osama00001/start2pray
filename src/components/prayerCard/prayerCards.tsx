@@ -57,7 +57,7 @@ export const PrayerCards = () => {
   return (
     <section id="prayerCards" className="grid grid-flow-row items-center my-20">
       <h2 className="uppercase mb-20 text-6xl mx-auto tracking-wide text-[#aed6f1] font-bold ">
-        choose
+        select
         <div className="text-[#5499c7] ml-2">prayer</div>
       </h2>
       <div className="flex  flex-wrap justify-center  mx-5">

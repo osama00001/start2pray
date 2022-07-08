@@ -8,6 +8,9 @@ import { PrayerCards } from "@components/prayerCard";
 import { PrayerPreparation } from "@components/prayerPrepration";
 import { PageLayout } from "@src/layouts";
 import type { NextPage } from "next";
+import { Intro } from "@components/introduction";
+import { PrayerComponent } from "@components/prayer";
+import { SimplifiedSalah } from "@components/simplifiedSalah";
 
 const Home: NextPage = () => {
   return (
@@ -31,6 +34,9 @@ const Home: NextPage = () => {
           </div>
           <PrayerCards />
           <PrayerPreparation />
+          <Intro/>
+          {/* <PrayerComponent/> */}
+          <SimplifiedSalah/>
           <About />
           <Feedback />
         </main>

@@ -6,12 +6,14 @@ import { useState } from "react";
 export const AudioPlayerModal = ({
   prayerRecord,
 }: {
-  prayerRecord: IPrayerData;
+  prayerRecord: any;
 }) => {
   const [rakaNumber, setrakaNumber] = useState(0);
 
   const { name, totalRaka, data } = prayerRecord;
-  const rakaName = `${totalRaka}-${name}`;
+  const rakaName = `${name}`;
+  const rakats = `${totalRaka}-${name}`;
+  
 
   const { raka, vttFile, recording, movementTime } = data[rakaNumber];
 
@@ -30,6 +32,7 @@ export const AudioPlayerModal = ({
   return (
     <div>
       <PlayerModal prayerName={raka} title={rakaName}>
+        <p className="text-right ...">{`Rakaat: ${rakats}`}</p>
         <AudioPlayer
           recording={recording}
           vttFile={vttFile}

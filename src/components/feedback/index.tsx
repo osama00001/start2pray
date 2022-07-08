@@ -12,7 +12,8 @@ export const Feedback = () => {
       </h2>
       <div className="space-y-5">
         <p className="text-[1.2rem] text-center">
-          Feel Free to leave a Feedback if you have any Questions.
+        Please feel free to get in touch using the form below. We’d love
+to hear your thoughts and answer any questions you may have!
         </p>
         <FeedbackForm />
       </div>
