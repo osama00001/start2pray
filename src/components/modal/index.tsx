@@ -6,6 +6,7 @@ import React, { Fragment, useState } from "react";
 import { AudioPlayerModal } from "@components/audioplayer";
 import { IPrayerData } from "@src/data/type";
 import ReactPlayer from "react-player";
+import { AudioPlayerModal2 } from "@components/audioplayer/playerCard2";
 
 interface Props {
   title: string;
@@ -18,11 +19,13 @@ interface Props {
   }[];
 }
 
+
 const PrayerDetails = ({
   audioModalData,
 }: {
   audioModalData: IPrayerData[];
-}) => {
+}) => { 
+  
   return (
     <DialogPrimitive.Description className="space-y-3 mx-auto flex justify-center font-normal text-gray-700">
       <div className="flex flex-col justify-center w-[min(300px,100%)]  gap-4">
@@ -43,10 +46,11 @@ const PrayerPreparationDetails = ({
 }: {
   preparation: string[];
 }) => { 
+  console.log("ffffff",preparation)
   return (
     <DialogPrimitive.Description className="mt-4 space-y-3  font-normal text-gray-700">
       {preparation.map((data, i) => (
-        <p key={i} className="text-[1rem]">
+        <p key={i} className="text-[1.7rem]">
           {data}
         </p>
       ))}
@@ -70,10 +74,12 @@ const IqamaAudio = ({
 
   return (
     <DialogPrimitive.Description className="rounded-xl  overflow-hidden  font-normal text-gray-700">
-      <h2 className="text-4xl font-bold text-center relative top-5">Iqamah</h2>
+      <h2 className="text-4xl font-bold text-center relative top-5">Iqamah(Men Only)</h2>
       <br></br>
       <p className="text-1xl  relative top-5" >
-      In Islam men are ordered to pray the obligatory prayers in congregation (i.e, to pray with a group of men). However, if a man prays alone then he should recite the iqamah before starting to pray.
+      In Islam men are ordered to pray the obligatory prayers in congregation (i.e, to pray with a group of men). 
+      However, if a man prays alone then he should recite the iqamah before starting to pray. 
+      The iqamah is a shorter version of the Athan.
       <br></br>
       <br></br>
       Click on the audio below to listen to the iqamah.</p>
@@ -100,6 +106,7 @@ const PrayerDetailsTrigger = ({ title }: { title: string }) => {
     <DialogPrimitive.Trigger asChild>
       <button className="shadow-lg w-[250px] mx-auto border-2 border-[#42ABAE] text-center transition-colors py-5 hover:bg-[#42ABAE] text-white/90 font-semibold uppercase text-sm">
         {title}
+        {console.log("tttt",title)}
       </button>
     </DialogPrimitive.Trigger>
   );
@@ -108,10 +115,11 @@ const PrayerDetailsTrigger = ({ title }: { title: string }) => {
 const PrayerPreparationDetailsTrigger = ({ title }: { title: string }) => {
   return (
     <DialogPrimitive.Trigger asChild>
-      <button className="py-6 px-1 text-3xl bg-primary hover:bg-primary/90 rounded-xl w-full sm:w-[200px] grow shrink-0">
-        <span className="text-gradient bg-gradient-to-r from-[#aed6f1] to-[#5499c7] ">
+      <button className="py-6 px-1 text-2xl bg-primary hover:bg-primary/90 rounded-xl w-full sm:w-[200px] grow shrink-0">
+        <h4 className="text-gradient bg-gradient-to-r from-[#aed6f1] to-[#5499c7] ">
           {title}
-        </span>
+          {console.log("name",title)}
+        </h4>
       </button>
     </DialogPrimitive.Trigger>
   );
@@ -124,9 +132,9 @@ export const Modal = ({
   audioModalData,
   isVedio,
   isAudio,
-}: Props) => {
+  isAthan,
+}: any) => {
   let [isOpen, setIsOpen] = useState(false);
-
   return (
     <DialogPrimitive.Root open={isOpen} modal={true} onOpenChange={setIsOpen}>
       {preparation && <PrayerPreparationDetailsTrigger title={title} />}
@@ -172,14 +180,16 @@ export const Modal = ({
                   <WuduInstructionVedio url="https://www.youtube.com/watch?v=3wSge6FrEFg" />
                 ) : isAudio ? (
                   <IqamaAudio preparation={preparation} />
-                ) : (
+                ) : isAthan ?(<AudioPlayerModal2 prayerRecord={"s"}/>):
+                 (
                   <PrayerPreparationDetails preparation={preparation} />
                 ))}
+
               {audioModalData && (
                 <>
                   <DialogPrimitive.Title className="text-2xl font-semibold text-gray-600 mb-2">
                     Select
-                  </DialogPrimitive.Title>{" "}
+                  </DialogPrimitive.Title>
                   <PrayerDetails audioModalData={audioModalData} />
                 </>
               )}

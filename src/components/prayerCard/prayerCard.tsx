@@ -22,6 +22,7 @@ export const PrayerCard = ({
   rakats,
   audioModalData,
 }: IPrayerCard) => {
+  console.log("rakats",rakats,name)
   return (
     <section
       className={`bg-primary grid grid-rows-[1fr,90px,1fr]  justify-center  items-center  min-h-[500px] rounded-xl py-6   grow sm:grow-0`}
@@ -29,6 +30,7 @@ export const PrayerCard = ({
     >
       <div className="relative w-40 h-40 mx-auto">
         <Image src={imgUrl} alt="" layout="fill" objectFit="contain" />
+        {console.log("imagggggge",imgUrl,name,rakats)}
       </div>
       <Modal audioModalData={audioModalData} title={name} rakats={rakats} />
       <p className="text-white/90 text-center px-7 font-semibold">

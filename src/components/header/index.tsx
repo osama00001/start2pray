@@ -1,11 +1,17 @@
 import cx from "classnames";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState} from "react";
+import { Dropdown } from "react-bootstrap";
+
 
 const navLinks = [
   { url: "#hero", label: "Home" },
   { url: "#prayers_preparation", label: "Preparation of prayers" },
+  { url: "#Introduction", label: "Introduction" },
   { url: "#About us", label: "About us" },
   { url: "#contact", label: "Contact us" },
+  { url: "#Prayer", label: "Prayer" },
+  { url: "#simplifiedSalah", label: "Salah" }
+  
 ];
 
 interface IMenuButton {
@@ -91,15 +97,19 @@ export const Header = () => {
                   className={cx(
                     "text-white/90  md:w-auto text-center hover:text-white/80 active:text-white/90 outline md:outline-none outline-offset-[6px]  outline-white/90 hover:outline-white/80 active:outline-white/90 outline-2 rounded-sm text-lg transition-all"
                   )}
-                >
+                > 
                   <a href={link.url} className="w-[min(300px,100%)]  h-full">
                     {link.label}
                   </a>
+                  
                 </li>
               ))}
             </ul>
+            
           </div>
+        
         </nav>
+        
       </header>
     </div>
   );

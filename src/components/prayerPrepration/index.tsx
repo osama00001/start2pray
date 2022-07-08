@@ -1,8 +1,7 @@
 import { Modal } from "@components/modal";
-
-const prayerPreparation = [
+const prayerPreparation :any = [
   {
-    title: "cleanliness",
+    title: "Cleanliness",
     content: [
       "Allah SWT says in the Quran",
       " إن الله يحب التوابين ويحب المتطهرين ",
@@ -15,7 +14,7 @@ const prayerPreparation = [
     ],
   },
   {
-    title: "wudhu",
+    title: "Wudhu",
     content: [
       "Wudhu is the act of cleansing certain parts of your body, in a specific order, with clean water. Before a Muslim prays, he/she has to perform Wudhu. ",
       "The prophet pbuh says: ",
@@ -25,23 +24,33 @@ const prayerPreparation = [
     ],
   },
   {
-    title: "iqamah",
+    title: "Iqamah(men only)",
     content: [
-      "In Islam men are ordered to pray the obligatory prayers in congregation (i.e, to pray with a group of men). ",
-      "However, if a man prays alone then he should recite the iqamah before starting to pray. ",
-      "Click on the audio below to listen to the iqamah.",
+      'In Islam men are ordered to pray the obligatory prayers in congregation (i.e, to pray with a group of men)',
+      'However, if a man prays alone then he should recite the iqamah before starting to pray',
+      'The iqamah is a shorter version of the Athan',
+      'Click on the audio below to listen to the iqamah',
     ],
   },
   {
-    title: "qiblah",
+    title: "Qiblah",
     content: [
-      "The qiblah is the direction Muslims face while praying. ",
+      "The qiblah is the direction Muslims face while praying.",
       " Muslims are ordered to pray towards the K'abaa in Mecca, Saudi Arabia. Therefore, the qiblah changes depending on where a Muslim is located. ",
       "Click on the compass below to know the qiblah of your country.",
     ],
   },
   {
-    title: "prayers timing",
+    title: "Prayer Timing",
+    content: [
+      "Prayer timings are dictated by the positioning of the sun during the day. This will differ from season to season and from country to country. Therefore, prayer timings will be determined on your location and the time of the year. ",
+      "In predominant Muslim countries, Muslims use the call to prayer athan to signal that it is time to pray. ",
+      "Please listen to this audio to hear the athan. ",
+      "To find out the prayer timings in your country, please type your location below.",
+    ],
+  },
+  {
+    title: "Athan",
     content: [
       "Prayer timings are dictated by the positioning of the sun during the day. This will differ from season to season and from country to country. Therefore, prayer timings will be determined on your location and the time of the year. ",
       "In predominant Muslim countries, Muslims use the call to prayer athan to signal that it is time to pray. ",
@@ -50,7 +59,6 @@ const prayerPreparation = [
     ],
   },
 ];
-
 export const PrayerPreparation = () => {
   return (
     <section
@@ -58,13 +66,14 @@ export const PrayerPreparation = () => {
       className="flex flex-col items-center justify-center w-[min(1300px,100%)] mx-auto min-h-screen"
     >
       <h2 className="uppercase mb-20 text-center text-4xl md:text-6xl tracking-wide text-gradient bg-gradient-to-r from-[#aed6f1] to-[#5499c7] font-bold ">
-        Prepration of prayers
+      Preparing to Pray
       </h2>
       <div className="flex px-10 flex-wrap w-full items-center children:my-5 sm:children:mx-3">
-        {prayerPreparation.map((prayer, i) => (
+        {prayerPreparation.map((prayer:any, i:any) => (
           <Modal
-            isVedio={prayer.title === "wudhu"}
-            isAudio={prayer.title === 'iqamah'}
+            isVedio={prayer.title === "Wudhu"}
+            isAudio={prayer.title === "Iqamah(Men Only)"}
+            isAthan={prayer.title==="Athan"}
             title={prayer.title}
             key={i}
             preparation={prayer.content}
