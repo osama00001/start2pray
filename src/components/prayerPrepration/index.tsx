@@ -24,7 +24,7 @@ const prayerPreparation :any = [
     ],
   },
   {
-    title: "Iqamah(men only)",
+    title: "Iqamah(Men Only)",
     content: [
       'In Islam men are ordered to pray the obligatory prayers in congregation (i.e, to pray with a group of men)',
       'However, if a man prays alone then he should recite the iqamah before starting to pray',

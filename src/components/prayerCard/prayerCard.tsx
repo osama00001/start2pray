@@ -30,7 +30,6 @@ export const PrayerCard = ({
     >
       <div className="relative w-40 h-40 mx-auto">
         <Image src={imgUrl} alt="" layout="fill" objectFit="contain" />
-        {console.log("imagggggge",imgUrl,name,rakats)}
       </div>
       <Modal audioModalData={audioModalData} title={name} rakats={rakats} />
       <p className="text-white/90 text-center px-7 font-semibold">

@@ -32,10 +32,10 @@ const Home: NextPage = () => {
               </div>
             </div>
           </div>
+          <Intro/>
           <PrayerCards />
           <PrayerPreparation />
-          <Intro/>
-          {/* <PrayerComponent/> */}
+          <PrayerComponent/>
           <SimplifiedSalah/>
           <About />
           <Feedback />

@@ -27,7 +27,7 @@ const prayerDetails = [
     name: "late afternoon prayer(asr)",
     key: "asr",
     img: "/img/cards/asr.png",
-    description: "when the sun is halfway down from noon to sunset.",
+    description: "When the sun is halfway down from noon to sunset.",
     color: "#3a4a58",
     rakats: [{ rakat: "4-Faradh" }],
   },
@@ -60,9 +60,9 @@ export const PrayerCards = () => {
         select
         <div className="text-[#5499c7] ml-2">prayer</div>
       </h2>
-      <div className="flex  flex-wrap justify-center  mx-5">
+      <div className="flex justify-center  mx-5">
         {prayerDetails.map((prayer, i) => (
-          <div key={prayer.key} className="w-[min(300px,100%)] m-3">
+          <div key={prayer.key} className="w-[min(300px,100%)] m-1">
             <PrayerCard
               name={prayer.name}
               imgUrl={prayer.img}
