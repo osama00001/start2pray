@@ -1,5 +1,5 @@
 import React from 'react';
-import { Document, Page } from 'react-pdf';
+// import { Document, Page } from 'react-pdf';
 
 
 export const SimplifiedSalah = () => {
@@ -12,10 +12,11 @@ export const SimplifiedSalah = () => {
         </div>
         <div className="space-y-6 px-10 mt-36 md:mt-0">
           <h2 className="uppercase text-4xl md:text-6xl tracking-wide text-gradient bg-gradient-to-r from-[#aed6f1] to-[#5499c7] font-bold ">
-            Simplified Salah
+          extra illustration
           </h2>
-          <object data="/img/Salaat Simplified - z-card.pdf" type="application/pdf" width="1400" height="800">
-          </object>
+          {/* <object data="/img/Salaat Simplified - z-card.pdf" type="application/pdf" width="1400" height="800">
+          </object> */}
+          <iframe src={`/img/SalaatSimplified.pdf#view=fitH`} title="simplifiedSalah" height="900" width="900" />
 
         </div>
       </section>

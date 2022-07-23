@@ -115,10 +115,9 @@ const PrayerDetailsTrigger = ({ title }: { title: string }) => {
 const PrayerPreparationDetailsTrigger = ({ title }: { title: string }) => {
   return (
     <DialogPrimitive.Trigger asChild>
-      <button className="py-6 px-1 text-2xl bg-primary hover:bg-primary/90 rounded-xl w-full sm:w-[200px] grow shrink-0">
+      <button className="py-6 px-1 text-2xl bg-primary hover:bg-primary/90 rounded-xl w-full sm:w-[200px] shrink-0">
         <h4 className="text-gradient bg-gradient-to-r from-[#aed6f1] to-[#5499c7] ">
           {title}
-          {console.log("name",title)}
         </h4>
       </button>
     </DialogPrimitive.Trigger>
