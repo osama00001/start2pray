@@ -176,7 +176,7 @@ export const Modal = ({
             >
               {preparation &&
                 (isVedio ? (
-                  <WuduInstructionVedio url="https://www.youtube.com/watch?v=3wSge6FrEFg" />
+                  <WuduInstructionVedio url="https://youtu.be/2ZlQAUYghJk" />
                 ) : isAudio ? (
                   <IqamaAudio preparation={preparation} />
                 ) : isAthan ?(<AudioPlayerModal2 prayerRecord={"s"}/>):
