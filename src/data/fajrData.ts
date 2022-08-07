@@ -24,7 +24,7 @@ const secondRaka = {
     [78, 88], // prostration
     [88, 92], // sitting
     [92, 101], // prostration
-    [101, 141], // sitting
+    [101, 224], // sitting
   ],
 };
 

@@ -52,7 +52,7 @@ const fourthRakaa = {
     [60, 70], // prostration
     [70, 73], // sitting
     [73, 83], // prostration
-    [83, 191], // sitting
+    [83, 225], // sitting
   ],
 };
 
@@ -88,7 +88,7 @@ export const ishaPrayerData: IPrayerData[] = [
         ...firstRakaa,
       },
       {
-        raka: "Isha Sunnah 4",
+        raka: "Isha Sunnah 2",
         ...fourthRakaa,
       },
     ],

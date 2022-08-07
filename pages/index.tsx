@@ -9,7 +9,6 @@ import { PrayerPreparation } from "@components/prayerPrepration";
 import { PageLayout } from "@src/layouts";
 import type { NextPage } from "next";
 import { Intro } from "@components/introduction";
-import { PrayerComponent } from "@components/prayer";
 import { SimplifiedSalah } from "@components/simplifiedSalah";
 
 const Home: NextPage = () => {
@@ -35,7 +34,6 @@ const Home: NextPage = () => {
           <Intro/>
           <PrayerCards />
           <PrayerPreparation />
-          <PrayerComponent/>
           <SimplifiedSalah/>
           <About />
           <Feedback />
