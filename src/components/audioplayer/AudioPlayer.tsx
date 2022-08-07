@@ -122,12 +122,21 @@ export const AudioPlayer = ({
           
           console.log(raka)
           // if rakaa Number is 2 or 4th then person should be in sitting position otherwise in standing position
-           if ((raka==='Fajr Faradh 2' || "Fajr Sunnah 2") &&(seconds>=203 && seconds <=208) )
+           if ((raka==='Fajr Faradh 2') &&(seconds>=203 && seconds <=208) )
           {
             console.log('ok')
             setImageIndex(7)
           }
-          else  if ( (raka==='Dhuhr Faradh 4'||'Dhuhr Sunnah 2') &&(seconds>184 && seconds <=192))
+          else if ((raka==='Fajr Sunnah 2') &&(seconds>=203 && seconds <=208) )
+          {
+            console.log('ok')
+            setImageIndex(7)
+          }
+          else  if ( (raka==='Dhuhr Faradh 4') &&(seconds>184 && seconds <=192))
+          {
+            setImageIndex(7)
+          }
+          else  if ( (raka==='Dhuhr Sunnah 2') &&(seconds>184 && seconds <=192))
           {
             setImageIndex(7)
           }
