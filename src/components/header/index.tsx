@@ -7,10 +7,9 @@ const navLinks = [
   { url: "#hero", label: "Home" },
   { url: "#prayers_preparation", label: "Preparation of prayers" },
   { url: "#Introduction", label: "Introduction" },
-  { url: "#About us", label: "About us" },
   { url: "#contact", label: "Contact us" },
-  { url: "#Prayer", label: "Prayer" },
-  { url: "#simplifiedSalah", label: "Salah" }
+
+  { url: "#simplifiedSalah", label: "Prayer" }
   
 ];
 

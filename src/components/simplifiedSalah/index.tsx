@@ -1,3 +1,4 @@
+import { PrayerComponent } from '@components/prayer';
 import React from 'react';
 // import { Document, Page } from 'react-pdf';
 
@@ -16,6 +17,7 @@ export const SimplifiedSalah = () => {
           </h2>
           {/* <object data="/img/Salaat Simplified - z-card.pdf" type="application/pdf" width="1400" height="800">
           </object> */}
+          <PrayerComponent/>
           <iframe src={`/img/SalaatSimplified.pdf#view=fitH`} title="simplifiedSalah" height="900" width="900" />
 
         </div>

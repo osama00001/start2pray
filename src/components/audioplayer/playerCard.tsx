@@ -41,6 +41,8 @@ export const AudioPlayerModal = ({
           movementTime={movementTime}
           rakaNumber={rakaNumber + 1}
           totalRaka={totalRaka}
+          name={name}
+          raka={raka}
         />
       </PlayerModal>
     </div>

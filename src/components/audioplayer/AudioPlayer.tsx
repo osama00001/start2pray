@@ -16,6 +16,8 @@ interface IAudioPlayer {
   vttFile: string;
   rakaNumber: number;
   totalRaka: number;
+  name:string;
+  raka:string;
   movementTime: number[][];
   handlePrevRaka: () => void;
   handleNextRaka: () => void;
@@ -28,6 +30,8 @@ export const AudioPlayer = ({
   handlePrevRaka,
   movementTime,
   rakaNumber,
+  name,
+  raka
 }: IAudioPlayer) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [played, setPlayed] = useState(0);
@@ -67,7 +71,9 @@ export const AudioPlayer = ({
   useEffect(() => {
     const seconds = Math.round(playedSeconds);
     if (seconds && movementTime) {
+
       if (seconds >= movementTime[0][0] && seconds < movementTime[0][1]) {
+        console.log("seconds",seconds,movementTime[0][1])
         setImageIndex(1);
       } else if (
         seconds >= movementTime[1][0] &&
@@ -78,6 +84,7 @@ export const AudioPlayer = ({
         seconds >= movementTime[2][0] &&
         seconds < movementTime[2][1]
       ) {
+
         setImageIndex(3);
       } else if (
         seconds >= movementTime[3][0] &&
@@ -98,11 +105,40 @@ export const AudioPlayer = ({
         movementTime[6] &&
         seconds >= movementTime[6][0] &&
         seconds < movementTime[6][1]
+        
       ) {
         if (totalRaka === 3) {
-          setImageIndex(rakaNumber === 1 ? 1 : 5); // for prayer with 3 rakaa
-        } else {
-          setImageIndex(rakaNumber === 1 || rakaNumber === 3 ? 1 : 5); // if rakaa Number is 2 or 4th then person should be in sitting position otherwise in standing position
+
+          setImageIndex(rakaNumber === 1 ? 1 : 5)
+          console.log("name",raka) // for prayer with 3 rakaa
+          if (rakaNumber ===3 && (seconds>184 && seconds <=208))
+          {
+            setImageIndex(7)
+          }
+          
+        } 
+        else {
+          setImageIndex(rakaNumber === 1 || rakaNumber === 3 ? 1 : 5);
+          
+          console.log(raka)
+          // if rakaa Number is 2 or 4th then person should be in sitting position otherwise in standing position
+           if ((raka==='Fajr Faradh 2' || "Fajr Sunnah 2") &&(seconds>=203 && seconds <=208) )
+          {
+            console.log('ok')
+            setImageIndex(7)
+          }
+          else  if ( (raka==='Dhuhr Faradh 4'||'Dhuhr Sunnah 2') &&(seconds>184 && seconds <=192))
+          {
+            setImageIndex(7)
+          }
+           else  if ( raka==='Ashr Faradh 4' &&(seconds>184 && seconds <=192))
+          {
+            setImageIndex(7)
+          }
+           else  if(raka==='Isha Faradh 4' &&(seconds>184 && seconds <=192))
+          {
+            setImageIndex(7)
+          }
         }
       } else if (
         movementTime[7] &&
