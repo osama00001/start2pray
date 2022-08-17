@@ -15,7 +15,7 @@ export const About = () => {
           />
         </div>
         <div className="space-y-6 px-10 mt-36 md:mt-0">
-          <h2 className="uppercase text-4xl md:text-6xl tracking-wide text-gradient bg-gradient-to-r from-[#aed6f1] to-[#5499c7] font-bold ">
+          <h2 className="uppercase mb-20 mx-auto tracking-wide text-[#5499c7] text-6xl font-bold ml-2 text-center ">
             About us
           </h2>
           <p className="text-xl text-gray-700">

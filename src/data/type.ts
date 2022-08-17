@@ -1,5 +1,5 @@
 export interface IPrayerData {
-  name: "faradh" | "sunnah" | "witar";
+  name: "fardh" | "sunnah" | "witar";
   totalRaka: number;
   data: {
     recording: string;
