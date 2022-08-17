@@ -30,15 +30,15 @@ const secondRaka = {
 
 export const fajrPrayerData: IPrayerData[] = [
   {
-    name: "faradh",
+    name: "fardh",
     totalRaka: 2,
     data: [
       {
-        raka: "Fajr Faradh 1",
+        raka: "Fajr Fardh 1",
         ...firstRaka,
       },
       {
-        raka: "Fajr Faradh 2",
+        raka: "Fajr Fardh 2",
         ...secondRaka,
       },
     ],

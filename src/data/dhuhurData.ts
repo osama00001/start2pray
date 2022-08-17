@@ -59,23 +59,23 @@ const fourthRakaa = {
 
 export const dhuhurPrayerData: IPrayerData[] = [
   {
-    name: "faradh",
+    name: "fardh",
     totalRaka: 4,
     data: [
       {
-        raka: "Dhuhr Faradh 1",
+        raka: "Dhuhr Fardh 1",
         ...firstRakaa,
       },
       {
-        raka: "Dhuhr Faradh 2",
+        raka: "Dhuhr Fardh 2",
         ...secondRakaa,
       },
       {
-        raka: "Dhuhr Faradh 3",
+        raka: "Dhuhr Fardh 3",
         ...thirdRakaa,
       },
       {
-        raka: "Dhuhr Faradh 4",
+        raka: "Dhuhr Fardh 4",
         ...fourthRakaa,
       },
     ],

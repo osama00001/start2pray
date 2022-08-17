@@ -56,10 +56,11 @@ const prayerDetails = [
 export const PrayerCards = () => {
   return (
     <section id="prayerCards" className="grid grid-flow-row items-center my-20">
-      <h2 className="uppercase mb-20 text-6xl mx-auto tracking-wide text-[#aed6f1] font-bold ">
-        select
-        <div className="text-[#5499c7] ml-2">prayer</div>
-      </h2>
+      <div className="uppercase mb-20  mx-auto tracking-wide   ">
+        <h2 className="text-[#5499c7]  text-6xl font-bold ml-2">The Five Daily Prayers</h2>
+        <p className="text-[##000000] text-4xl ml-5 text-center" >Select Prayer</p>
+      </div>
+     
       <div className="flex justify-center  mx-5">
         {prayerDetails.map((prayer, i) => (
           <div key={prayer.key} className="w-[min(300px,100%)] m-1">
